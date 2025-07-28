@@ -1,0 +1,76 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments (Poetry local venv)
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# FastAPI log files
+*.log
+
+# Pytest
+.pytest_cache/
+.coverage
+coverage.xml
+*.cover
+htmlcov/
+
+# Mypy / static analysis
+.mypy_cache/
+.dmypy.json
+.pyre/
+
+# Pylint
+.pylint.d/
+
+# Test coverage
+coverage/
+
+# Build / distribution artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Poetry
+poetry.lock
+
+# Alembic
+alembic.ini
+alembic/versions/*.py[cod]
+
+# Docker
+*.env
+*.env.*
+*.bak
+*.tmp
+docker-compose.override.yml
+
+# PyCharm
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+
+# Editor backups
+*~
+*.swp
+
+# SQLite
+*.db
+*.sqlite3
