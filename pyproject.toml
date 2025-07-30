@@ -1,18 +1,32 @@
-[project]
+[tool.poetry]
 name = "odme-anomalies"
 version = "0.1.0"
-description = ""
-authors = [
-    {name = "bntmzu",email = "kuranova988@gmail.com"}
-]
+description = "A service for monitoring mythological anomalies"
+authors = ["bntmzu <kuranova988@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-    "fastapi (>=0.116.1,<0.117.0)",
-    "uvicorn (>=0.35.0,<0.36.0)"
+packages = [
+    { include = "odme_anomalies", from = "src" }
 ]
+
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+fastapi = ">=0.116.1,<0.117.0"
+uvicorn = { extras = ["standard"], version = ">=0.35.0,<0.36.0" }
+sqlalchemy = ">=2.0.41,<3.0.0"
+alembic = ">=1.16.4,<2.0.0"
+pydantic = ">=2.11.7,<3.0.0"
+aiosqlite = "^0.19"
 
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+pytest-asyncio = "^1.1.0"
+httpx = "^0.28.1"
+black = "^25.1.0"
+isort = "^6.0.1"
+
