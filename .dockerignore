@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+ENV/
+venv/
+
+# Alembic migration cache (history)
+alembic/versions/__pycache__/
+
+# SQLite database (локально, если не нужен в контейнере)
+anomalies.db
+
+# IDE & OS metadata
+*.log
+*.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Test artifacts
+tests/__pycache__/
+*.pytest_cache/
+*.coverage
+htmlcov/
+.coverage.*
+
+# Misc
+*.db-journal
+.env
+*.http
+
+# Git
+.git/
+.gitignore
