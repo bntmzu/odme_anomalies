@@ -46,13 +46,6 @@ dist/
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Poetry
-poetry.lock
-
-# Alembic
-alembic.ini
-alembic/versions/*.py[cod]
-
 # Docker
 *.env
 *.env.*
@@ -75,3 +68,7 @@ docker-compose.override.yml
 *.db
 *.sqlite3
 .env
+
+# Docker / Compose
+*.pid
+*.tar

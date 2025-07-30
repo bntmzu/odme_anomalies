@@ -1,0 +1,40 @@
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: prod
+    container_name: odme_anomalies_web
+    command: >
+      gunicorn 
+      -k uvicorn.workers.UvicornWorker 
+      src.odme_anomalies.main:app 
+      --bind 0.0.0.0:8000 
+      --workers ${UVICORN_WORKERS:-4} 
+      --timeout 120
+    ports:
+      - "${PORT:-8000}:8000"
+    env_file:
+      - .env
+    volumes:
+      - anomalies_data:/data
+    restart: unless-stopped
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    container_name: odme_anomalies_test
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    command: pytest
+    depends_on:
+      - web
+
+volumes:
+  anomalies_data:
