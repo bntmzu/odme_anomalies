@@ -41,7 +41,7 @@ src/
 
 ---
 
-## 🧪 Running Locally (Dev)
+## 🐳 Docker – Development Workflow
 
 ```bash
 # Build dev container
@@ -51,12 +51,20 @@ docker build -f Dockerfile -t odme-dev --target dev .
 docker run --rm -it odme-dev
 ```
 
-# Or manually
+ Or manually
 
 ```bash
 poetry install
 alembic upgrade head
 pytest
+```
+
+⚠️ .env.example file
+
+```bash
+DATABASE_URL=
+ALEMBIC_DATABASE_URL=
+PORT=
 ```
 
 ## 🧪 🏗️ Production Build
