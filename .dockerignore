@@ -32,7 +32,6 @@ htmlcov/
 
 # Misc
 *.db-journal
-.env
 *.http
 
 # Git

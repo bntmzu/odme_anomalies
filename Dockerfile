@@ -20,7 +20,7 @@ CMD ["gunicorn", "-k", "uvicorn.workers.UvicornWorker", "src.odme_anomalies.main
 # DEV / TEST TARGET
 # -------------------
 FROM base AS dev
-RUN poetry install --no-root --no-interaction --no-ansi
+RUN poetry install --extras "dev" --no-root --no-interaction --no-ansi
 COPY . .
 ENV PYTHONPATH=/app/src
 
